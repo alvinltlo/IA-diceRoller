@@ -13,6 +13,11 @@ img.selected {
     border-color: red; /* will overwrite color, only */
 }
 
+img {
+    width: 65px;
+    height: auto;
+}
+
 .blur {
     filter: blur(3px);
 }
