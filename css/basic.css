@@ -1,0 +1,18 @@
+body{
+	font-family: 'Girassol', cursive;
+	overflow-x: hidden;
+}
+  
+.selectable img {
+    margin: 5px;
+    padding: 5px;
+    border: 2px solid #ffffff;
+  }
+
+img.selected {
+    border-color: red; /* will overwrite color, only */
+}
+
+.blur {
+    filter: blur(3px);
+}

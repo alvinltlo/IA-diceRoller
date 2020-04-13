@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Imperial Assault Dice Roller</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Girassol&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/basic.css">
+</head>
+
+<body>
+    <div class="d-flex flex-row justify-content-center my-2">
+        <h4 class="animated zoomIn">Imperial Assault Dice Roller</h2>
+    </div>
+
+    <div class="d-flex flex-row justify-content-around my-2">
+        <div class="d-flex flex-wrap align-items-center">
+            <div class="mx-2">Red</div>
+            <img src="images/Dice Icon-red.png" class="rounded img-thumbnail">
+            <select class="selectpicker px-1 mx-2 form-control-lg" id="redDiceCount">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+        <div class="d-flex flex-wrap align-items-center">
+            <div class="mx-2">Yellow</div>
+            <img src="images/Dice Icon-yellow.png" class="rounded img-thumbnail">
+            <select class="selectpicker px-1 mx-2 form-control-lg" id="yellowDiceCount">
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+            </select>
+        </div>
+        <div class="d-flex flex-wrap align-items-center ">
+            <div class="mx-2">Green</div>
+            <img src="images/Dice Icon-green.png" class="rounded img-thumbnail">
+            <select class="selectpicker px-1 mx-2 form-control-lg" id="greenDiceCount">
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="d-flex flex-row justify-content-around">
+        <div class="d-flex flex-wrap align-items-center">
+            <div class="mx-2">Blue</div>
+            <img src="images/Dice Icon-blue.png" class="rounded img-thumbnail">
+            <select class="selectpicker px-1 mx-2 form-control-lg" id="blueDiceCount">
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+            </select>
+        </div>
+        <div class="d-flex flex-wrap align-items-center">
+            <div class="mx-2">White</div>
+            <img src="images/Dice Icon-white.png" class="rounded img-thumbnail">
+            <select class="selectpicker px-1 mx-2 form-control-lg" id="whiteDiceCount">
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+            </select>
+        </div>
+        <div class="d-flex flex-wrap align-items-center">
+            <div class="mx-2">Black</div>
+            <img src="images/Dice Icon-black.png" class="rounded img-thumbnail">
+            <select class="selectpicker px-1 mx-2 form-control-lg" id="blackDiceCount">
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-around flex-wrap p-3">
+        <div class="d-flex flex-fill"><button type="button" class="btn btn-dark btn-block btn-m mx-2" id="roll"
+                onclick="roll()">Roll</button></div>
+        <div class="d-flex flex-fill"><button type="button" class="btn btn-dark btn-block btn-m mx-2" id="reset"
+                onclick="reset()">Reset</button></div>
+        <div class="d-flex flex-fill"><button type="button" class="btn btn-dark btn-block btn-m mx-2 disabled"
+                id="reroll" onclick="reroll()">Reroll</button></div>
+        <div class="d-flex flex-fill"><button type="button" class="btn btn-dark btn-block btn-m mx-2" id="clear"
+                onclick="clearResult()">Clear</button></div>
+    </div>
+
+    <div class="d-flex flex-row px-3 selectable" id="result">
+    </div>
+
+    <!-- JS files: jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script src="js/basic.js"></script>
+</body>
+
+</html>
