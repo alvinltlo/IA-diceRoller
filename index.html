@@ -5,9 +5,8 @@
     <title>Imperial Assault Dice Roller</title>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Girassol&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.min.css">
     <link rel="stylesheet" type="text/css" href="css/basic.css">
 </head>
 
@@ -85,20 +84,19 @@
                 onclick="roll()">Roll</button></div>
         <div class="d-flex flex-fill"><button type="button" class="btn btn-dark btn-block btn-m mx-2" id="reset"
                 onclick="reset()">Reset</button></div>
-        <div class="d-flex flex-fill"><button type="button" class="btn btn-dark btn-block btn-m mx-2 disabled"
-                id="reroll" onclick="reroll()">Reroll</button></div>
-        <div class="d-flex flex-fill"><button type="button" class="btn btn-dark btn-block btn-m mx-2" id="clear"
-                onclick="clearResult()">Clear</button></div>
+        <div class="d-flex flex-fill"><button type="button" class="btn btn-dark btn-block btn-m mx-2" id="reroll"
+                onclick="reroll()" disabled>Reroll</button></div>
+        <div class="d-flex flex-fill" disabled><button type="button" class="btn btn-dark btn-block btn-m mx-2 "
+                id="clear" onclick="clearResult()" disabled>Clear</button></div>
     </div>
 
     <div class="d-flex flex-row px-3 selectable" id="result">
     </div>
 
     <!-- JS files: jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
+    <script src="js/jquery-3.5.0.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/basic.js"></script>
 </body>
 

@@ -1,3 +1,7 @@
+const reroll_btn = document.getElementById("reroll");
+const clear_btn = document.getElementById("clear");
+const result_div = document.getElementById("result");
+
 // reset dropdown to 0
 function reset() {
     console.log("reset()");
@@ -12,9 +16,9 @@ function reset() {
 // clear rolled result
 function clearResult() {
     console.log("clearResult()");
-    var dest = document.getElementById("result");
-    dest.innerHTML = '';
-    enableReroll(false);
+    result_div.innerHTML = '';
+    resetReRollBtn();
+    resetClearBtn();
 }
 
 // roll all the dices
@@ -34,6 +38,7 @@ function roll() {
         }
     }
     reset();
+    resetClearBtn();
 }
 
 // private function to append dice roll result
@@ -72,23 +77,12 @@ function addToResult(type) {
     img.classList.add("mx-1");
     img.classList.add("selectable");
     img.alt = type;
-    var dest = document.getElementById("result");
-    dest.appendChild(img);
+    result_div.appendChild(img);
 }
 
 // private function to generate random number between 1 to 6
 function getRandom() {
     return Math.floor(Math.random() * 6) + 1;
-}
-
-// private function to disable/enable re-roll button
-function enableReroll(bool) {
-    if (bool) {
-        document.getElementById("reroll").classList.remove('disabled')
-    }
-    else {
-        document.getElementById("reroll").classList.add('disabled')
-    }
 }
 
 function reroll() {
@@ -100,6 +94,27 @@ function reroll() {
         dice.classList.add("blur");
         dice.classList.remove("selected");
     })
+
+    resetReRollBtn();
+}
+
+function resetReRollBtn() {
+    var selectedDices = document.getElementsByClassName("selected");
+    if (selectedDices.length === 0) {
+        reroll_btn.disabled = true;
+    }
+    else {
+        reroll_btn.disabled = false;
+    }
+}
+
+function resetClearBtn() {
+    if (result_div.hasChildNodes()) {
+        clear_btn.disabled = false;
+    }
+    else {
+        clear_btn.disabled = true;
+    }
 }
 
 $('body').on('click', '#result img', function () {
@@ -117,11 +132,5 @@ $('body').on('click', '#result img', function () {
     }
 
     //if there is no selected dices, disabled reroll
-    var selectedDices = document.getElementsByClassName("selected");
-    if (selectedDices.length === 0) {
-        enableReroll(false);
-    }
-    else {
-        enableReroll(true);
-    }
+    resetReRollBtn();
 })
