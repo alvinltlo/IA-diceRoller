@@ -14,7 +14,8 @@ img.selected {
 
 img {
     width: 65px;
-    height: auto;
+    align-self: center;
+    flex: 0 0 auto;
 }
 
 .blur {
